@@ -19,6 +19,7 @@ const sequelize = new Sequelize(process.env.DB_DATABASE,process.env.DB_USERNAME,
         console.error(error.message);
       }
   }
+  
 
   module.exports = {
     connectionToDb,
