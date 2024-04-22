@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const { connectionToDb } = require("./config/dbConfig");
 const cors = require("cors");
 const { userRouter } = require("./routes/user.route");
 const { vehicleRouter } = require("./routes/user.vehicle");
-
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use(cors());
@@ -17,9 +18,9 @@ app.use("/users",userRouter);
 app.use("/vehicles",vehicleRouter);
 
 
-app.listen(8080, async()=> {
+app.listen(PORT, async()=> {
     await connectionToDb();
-    console.log("Server is running at port number 8080")
+    console.log(`Server is running at port number ${PORT}`);
 })
 
 
