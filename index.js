@@ -4,7 +4,7 @@ const { connectionToDb } = require("./config/dbConfig");
 const cors = require("cors");
 const { userRouter } = require("./routes/user.route");
 const { vehicleRouter } = require("./routes/user.vehicle");
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 const app = express();
 app.use(cors());
@@ -18,9 +18,9 @@ app.use("/users",userRouter);
 app.use("/vehicles",vehicleRouter);
 
 
-app.listen(PORT, async()=> {
+app.listen(port, async()=> {
     await connectionToDb();
-    console.log(`Server is running at port number ${PORT}`);
+    console.log(`Server is running at port number ${port}`);
 })
 
 
