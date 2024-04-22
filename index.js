@@ -17,7 +17,6 @@ app.get("/",(req,res)=>{
 app.use("/users",userRouter);
 app.use("/vehicles",vehicleRouter);
 
-
 app.listen(port, async()=> {
     await connectionToDb();
     console.log(`Server is running at port number ${port}`);
